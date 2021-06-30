@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Change profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid bg-3 text-center">
+    <h3>Challenge: </h3>
+    <p>Inject a key logger script into this page</p>
+    <div id="username" style="display:none;"></div>
+    <div class="panel panel-default col-md-6 col-md-offset-3" style="width:50%">
+        <div class="panel-heading"><h1>Edit Profile</h1></div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" value="JohnDoe@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="password">New Password:</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="New Password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
+                  </div>
+                <button type="submit" class="btn btn-default">Update</button>
+            </form>
+        </div>
+    </div>
+    
+
+    
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        
+        $("#username").html(username);
+
+        //Submit function
+    </script>
+</div>
+
+</body>
+</html>

