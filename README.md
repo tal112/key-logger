@@ -3,7 +3,7 @@
 
 
 ### The objective of this challenge:
-- Inject a script that saved every character that is types into a password input
+- Inject a script that saves every character that is typed into a password input
 
 
 ## How it works
